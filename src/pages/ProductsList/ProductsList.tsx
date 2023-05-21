@@ -28,14 +28,6 @@ export const ProductsList = () => {
       });
   }, []);
 
-  const sortToUp = () => {
-    data.sort((a, b) => b.prize - a.prize);
-    console.log(sortToUp());
-  };
-  const sortToDown = () => {
-    data.sort((a, b) => b.prize - a.prize);
-    console.log(sortToDown());
-  };
   return (
     <div className="products-list-container">
       <div className="products-list-btns">
@@ -60,12 +52,8 @@ export const ProductsList = () => {
           <form action="">
             <label htmlFor="">Sort by: </label>
             <select id="sortby" name="sortby">
-              <option value="all" onClick={() => sortToUp}>
-                Prize ^
-              </option>
-              <option value="worldcup" onClick={sortToDown}>
-                Prize v
-              </option>
+              <option value="all">Prize ^</option>
+              <option value="worldcup">Prize v</option>
             </select>
           </form>
         </div>
