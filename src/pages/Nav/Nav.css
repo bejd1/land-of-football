@@ -1,0 +1,76 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  margin: 0;
+}
+.nav-center p {
+  font-family: "Quicksand", sans-serif;
+}
+
+.nav-left {
+  display: flex;
+  flex-direction: row;
+  margin-left: 70px;
+  gap: 40px;
+  font-size: 18px;
+}
+
+.BurgerMenu {
+  display: none;
+}
+.nav-center {
+  font-family: "Oxanium", cursive;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 46px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-center h4 {
+  margin: 0;
+}
+
+.nav-right {
+  margin-right: 70px;
+  margin-left: 90px;
+}
+
+.nav-right-icon {
+  font-size: 25px;
+  text-decoration: none;
+  color: #fff;
+}
+
+@media only screen and (max-width: 992px) {
+  .nav-left p {
+    display: none;
+  }
+  .nav-right {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-left {
+    margin-left: 30px;
+  }
+  .nav-right {
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 442px) {
+  .nav-center {
+    font-size: 21px;
+  }
+  .nav-left {
+    margin-left: 15px;
+  }
+  .nav-right {
+    margin-right: 15px;
+  }
+}

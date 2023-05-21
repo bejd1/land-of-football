@@ -1,0 +1,54 @@
+.advantage-container {
+  background-color: #212121;
+  margin-bottom: 60px;
+}
+
+.advantage-container p {
+  margin-top: 15px;
+}
+.advantage-container h2 {
+  font-family: "Oswald";
+  margin: 20 0px;
+  margin-left: 80px;
+}
+
+.advantage-box {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  background-color: #3b3b3b;
+  color: #fff;
+  border-radius: 15px;
+  margin: 0 60px;
+}
+
+.advantage-box-left-freeship,
+.advantage-box-left-highquality,
+.advantage-box-right-moneyback,
+.advantage-box-right-positive-opinion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+}
+
+/* icons */
+
+@media only screen and (max-width: 992px) {
+  .advantage-container h2 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .advantage-box {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 442px) {
+  .advantage-container p {
+    text-align: center;
+  }
+}

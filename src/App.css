@@ -1,0 +1,36 @@
+.App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #212121;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-family: "Oxanium", cursive;
+  font-family: "Quicksand", sans-serif;
+}
+
+.App p {
+  margin: 0;
+}
+
+.not__exit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  font-family: "Oxanium", cursive;
+}
+
+.not__exit-btn {
+  background-color: #fd823f;
+  color: white;
+  padding: 13px 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  text-decoration: none;
+}

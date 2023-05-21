@@ -1,0 +1,24 @@
+.about-us-container {
+  background-color: #212121;
+  margin-bottom: 60px;
+}
+
+.about-us-container h2 {
+  margin: 20px 0;
+  margin-left: 80px;
+  font-family: "Oswald";
+}
+
+.about-us-conatiner-text {
+  padding: 0 120px;
+}
+
+@media only screen and (max-width: 992px) {
+  .about-us-container h2 {
+    text-align: center;
+    margin-left: 0;
+  }
+  .about-us-conatiner-text {
+    padding: 0 60px;
+  }
+}

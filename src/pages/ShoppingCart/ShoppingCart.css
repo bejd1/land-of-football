@@ -1,0 +1,110 @@
+.shopping-cart-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  font-family: "Oswald", sans-serif;
+}
+
+.shopping-cart-container h2 {
+  margin-left: 80px;
+}
+
+.shopping-cart-container-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid #fff;
+  padding: 20px 30px;
+  margin: 0 80px;
+}
+
+/* left  */
+
+.shopping-cart-container-img {
+  width: 150px;
+}
+
+.shopping-cart-container-item-left {
+  display: flex;
+  flex-direction: row;
+  grid-column: 1 / 2;
+}
+
+.shopping-cart-container-item-left-tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.shopping-cart-container-item-left-bottom {
+  display: flex;
+  background-color: #fff;
+  color: black;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 12px;
+}
+
+/* right  */
+.shopping-cart-container-item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  margin: 10px;
+}
+
+.shopping-cart-container-right-text {
+  margin-left: 80px;
+}
+
+.shopping-cart-container-right-text button {
+  background-color: #fd823f;
+  color: white;
+  padding: 13px 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .shopping-cart-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .shopping-cart-container-item {
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px 40px;
+    margin: 0 30px;
+  }
+  .shopping-cart-container-img {
+    width: 100px;
+  }
+
+  .shopping-cart-container-left h2,
+  .shopping-cart-container-right h2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .shopping-cart-container-item-left {
+    justify-content: space-evenly;
+  }
+  .shopping-cart-container-item-right {
+    flex-direction: row;
+    gap: 40px;
+  }
+  .shopping-cart-container-right-text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+  }
+}

@@ -1,0 +1,133 @@
+.products-list-cart-loading {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-list-container h2 {
+  font-family: "Oswald";
+  margin: 40px;
+  margin-left: 70px;
+}
+
+.products-list-container {
+  font-family: "Oswald", sans-serif;
+}
+
+.products-list-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.products-list-btns-left {
+  display: flex;
+  gap: 30px;
+  margin-left: 120px;
+}
+.products-list-btns-left-form {
+  display: none;
+}
+
+.products-list-btns-right {
+  display: flex;
+  align-items: center;
+  margin-right: 120px;
+}
+
+.products-list-btns button {
+  padding: 10px 25px;
+  border-radius: 12px;
+  border: none;
+  background-color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* products list cart */
+
+.products-list-cart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 0 70px;
+  padding: 20px 0;
+  gap: 50px;
+}
+
+.products-list-cart-link {
+  text-decoration: none;
+}
+.products-list-cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #fff;
+  border-radius: 7px;
+  padding: 20px;
+  width: 230px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.products-list-cart-container-img {
+  margin: 0;
+  width: 200px;
+}
+
+.products-list-cart-container-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px 9px;
+}
+
+.products-list-cart-container-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 12px;
+  background-color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 420px) {
+  .products-list-container h2 {
+    margin-bottom: 20px;
+  }
+
+  .products-list-btns-right {
+    font-size: 14px;
+  }
+  .products-list-btns {
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .products-list-btns-left {
+    display: none;
+  }
+  .products-list-btns-left-form {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .products-list-container h2 {
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+  }
+  .products-list-btns-left,
+  .products-list-btns-right,
+  .products-list-btns-left-form {
+    margin: 0 50px;
+  }
+}
