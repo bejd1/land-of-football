@@ -24,8 +24,8 @@ function App(): JSX.Element {
           <Route path="/" element={<Home />} />
           <Route path="/main" element={<Main />} />
           <Route path="/products" element={<ProductsList />} />
-          <Route path="/cart" element={<ShoppingCart />} />
           <Route path="/products/:id" element={<ProductItem />} />
+          <Route path="/cart" element={<ShoppingCart />} />
           <Route
             path="*"
             element={

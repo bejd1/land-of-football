@@ -81,7 +81,7 @@
 @media only screen and (max-width: 576px) {
   .shopping-cart-container-item {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 20px 40px;
     margin: 0 30px;
   }
@@ -95,11 +95,13 @@
     margin: 20px 0;
   }
   .shopping-cart-container-item-left {
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 5px 10px;
   }
   .shopping-cart-container-item-right {
     flex-direction: row;
     gap: 40px;
+    margin: 10px 20px;
   }
   .shopping-cart-container-right-text {
     display: flex;

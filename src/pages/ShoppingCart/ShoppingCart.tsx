@@ -29,7 +29,6 @@ export const ShoppingCart = () => {
           <div className="shopping-cart-container-item-right">
             <p>Total: $12.99</p>
             <p>
-              Delete
               <Trash className="shopping-cart-container-item-right-icon" />
             </p>
           </div>

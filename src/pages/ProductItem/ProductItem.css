@@ -1,47 +1,79 @@
-.product-item-container {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.product-item-container h2 {
-  display: flex;
-  flex-direction: row;
-  font-family: "Oswald";
-  margin: 20px 0;
-  margin-left: 80px;
-}
-
-.product-item-container {
-  display: flex;
-  flex-direction: row;
-}
-
-.product-item-container-left {
-  margin-top: 80px;
-  grid-column: 1 / 2;
-  width: 100%;
-}
-
-.product-item-container-right {
-  margin-top: 80px;
-  grid-column: 2/3;
-  width: 100%;
-}
-
-.product-item-container-right button {
-  padding: 10px 25px;
-  border-radius: 12px;
-  border: none;
-  background-color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.products-list-loading {
-  height: 90vh;
+.products-list-item-loading {
+  height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.product-item-container {
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 50px;
+}
+
+.product-item-container-left {
+  margin-top: 170px;
+}
+.product-item-container-left p {
+  letter-spacing: 1px;
+}
+
+.product-item-container-left button {
+  background-color: #fd823f;
+  color: white;
+  padding: 13px 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+}
+
+.product-item-container-left h3 {
+  font-size: 34px;
   font-family: "Oswald";
+}
+
+.product-item-container-right {
+  display: flex;
+  align-items: center;
+}
+.product-item-container-right img {
+  margin-bottom: 60px;
+}
+
+@media only screen and (max-width: 992px) {
+  .product-item-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .product-item-container-left {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 80px 0;
+  }
+  .product-item-container-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  .product-item-container-right img {
+    margin: 0;
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .product-item-container-right img {
+    width: 280px;
+    height: 280px;
+  }
 }

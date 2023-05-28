@@ -43,6 +43,11 @@
   position: relative;
   width: 100%;
 }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
 .productsList-box-euro {
   background-image: url("../../images/european-championship-ga61856e83_640.jpg");
   background-repeat: no-repeat;
@@ -68,6 +73,7 @@
   left: 0;
   z-index: 1;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .productsList-box-national-title {
@@ -76,6 +82,7 @@
   height: 100%;
   z-index: 2;
   opacity: 1;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
