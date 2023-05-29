@@ -14,19 +14,15 @@ interface Product {
 
 export const ProductItem = () => {
   const [items, setItems] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
     try {
       const fetchData = async () => {
-        setIsLoading(true);
-
         const result = await axios.get(
           "https://land-of-football-9167d-default-rtdb.firebaseio.com/productsList.json"
         );
         setItems(result.data);
-        setIsLoading(false);
       };
       fetchData();
     } catch (error) {
@@ -37,25 +33,23 @@ export const ProductItem = () => {
   const item = items.find((item) => item.id === Number(id));
 
   if (!item) {
-    return <div></div>;
+    return (
+      <div className="vh">
+        <Loading />
+      </div>
+    );
   }
 
   return (
-    <>
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <div className="product-item-container">
-          <div className="product-item-container-left">
-            <h3>{item.name}</h3>
-            <p>Price: ${item.price}</p>
-            <button>Add to cart</button>
-          </div>
-          <div className="product-item-container-right">
-            <img src={item.url} alt={item.name} />
-          </div>
-        </div>
-      )}
-    </>
+    <div className="product-item-container">
+      <div className="product-item-container-left">
+        <h3>{item.name}</h3>
+        <p>Price: ${item.price}</p>
+        <button>Add to cart</button>
+      </div>
+      <div className="product-item-container-right">
+        <img src={item.url} alt={item.name} />
+      </div>
+    </div>
   );
 };

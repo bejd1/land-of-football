@@ -45,6 +45,13 @@
   margin-bottom: 60px;
 }
 
+.vh {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media only screen and (max-width: 992px) {
   .product-item-container {
     flex-direction: column;

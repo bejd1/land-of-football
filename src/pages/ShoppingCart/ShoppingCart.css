@@ -60,7 +60,8 @@
   margin-left: 80px;
 }
 
-.shopping-cart-container-right-text button {
+.shopping-cart-container-right-text button,
+.shopping-cart-empty button {
   background-color: #fd823f;
   color: white;
   padding: 13px 25px;
@@ -70,6 +71,19 @@
   border: none;
   cursor: pointer;
   margin: 20px 0;
+}
+
+.shopping-cart-empty {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  height: 89vh;
+}
+
+.shopping-cart-empty h2 {
+  font-family: "Oswald", sans-serif;
+  margin-top: 330px;
 }
 
 @media only screen and (max-width: 992px) {
