@@ -116,6 +116,7 @@ export const ProductsList = () => {
                 <Link
                   to={`/products/${id}`}
                   className="products-list-cart-link"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   <div className="products-list-cart-container">
                     <img

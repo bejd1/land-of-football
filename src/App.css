@@ -34,3 +34,9 @@
   margin: 20px 0;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 992px) {
+  .not__exit {
+    text-align: center;
+  }
+}

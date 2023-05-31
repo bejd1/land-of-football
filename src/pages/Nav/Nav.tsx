@@ -14,7 +14,7 @@ export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
   );
   // const dispatch = useAppDispatch();
 
-  console.log(amount);
+  // console.log(amount);
 
   return (
     <div className="nav-container">
@@ -22,9 +22,7 @@ export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
         <Link to="/" className="nav-left-home-link">
           <p>Home</p>
         </Link>
-        <Link to="/">
-          <p>About us</p>
-        </Link>
+
         <Link to="/products">
           <p>Products</p>
         </Link>

@@ -98,3 +98,8 @@
     text-align: center;
   }
 }
+@media only screen and (max-width: 333px) {
+  .newsletter-container-right-img {
+    width: 220px;
+  }
+}

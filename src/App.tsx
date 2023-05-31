@@ -16,9 +16,8 @@ function App(): JSX.Element {
 
   return (
     <div className="App">
-      {isOpen && <Menu />}
-
       <BrowserRouter>
+        {isOpen && <Menu />}
         <Nav menuToggle={menuToggle} />
         <Routes>
           <Route path="/" element={<Home />} />

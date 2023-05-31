@@ -18,7 +18,7 @@ export const Main = () => {
               choose the ball that is perfect for you!
             </p>
           </div>
-          <Link to="/products">
+          <Link to="/products" onClick={() => window.scrollTo(0, 0)}>
             <button className="main-btn">Products</button>
           </Link>
         </div>

@@ -73,3 +73,8 @@
     width: 100%;
   }
 }
+@media only screen and (max-width: 301px) {
+  .main-left-box {
+    margin: 10px;
+  }
+}
