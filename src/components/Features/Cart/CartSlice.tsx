@@ -1,13 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../Store/Store";
-// import { useState } from "react";
+import { RootState } from "../../App/Store";
+import axios from "axios";
 
 export interface Product {
   id: string;
   title: string;
-  description: string;
-  imageUrl: string;
+  category: string;
+  url: string;
   price: number;
 }
 
@@ -27,6 +27,18 @@ const initialState: CartState = {
   error: null,
 };
 
+export const fetchProductsList = createAsyncThunk(
+  "cart/fetchProductsList",
+  async () => {
+    const response = await axios.get(
+      "https://land-of-football-9167d-default-rtdb.firebaseio.com/productsList.json"
+    );
+    return response.data;
+  }
+);
+
+console.log(fetchProductsList());
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -39,6 +51,21 @@ export const cartSlice = createSlice({
     },
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.amount += action.payload;
+    },
+    clearCart(state) {
+      state.cartItems = [];
+      state.amount = 0;
+      state.total = 0;
+    },
+    removeFromCart(state, action: PayloadAction<string>) {
+      const itemId = action.payload;
+      const existingItem = state.cartItems.find((item) => item.id === itemId);
+
+      if (existingItem) {
+        state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
+        // state.quanti ty -= existingItem.quantity;
+        // state.total -= existingItem.quantity * existingItem.price;
+      }
     },
   },
   // extraReducers: (builder) => {

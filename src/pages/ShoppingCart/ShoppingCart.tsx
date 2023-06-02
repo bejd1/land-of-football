@@ -1,19 +1,20 @@
 import "./ShoppingCart.css";
 import { Trash, Plus, Dash } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
-// import { increment, decrement } from "../../components/Features/Cart/CartSlice";
 import { Link } from "react-router-dom";
 export const ShoppingCart = () => {
   interface Items {
-    // cartItems: [];
+    cartItems: [];
     amount: number;
     total: number;
   }
-  const { amount, total } = useSelector((store: { cart: Items }) => store.cart);
+
+  const { total } = useSelector((store: { cart: Items }) => store.cart);
+  // const { cart } = useSelector((state) => state);
   // const dispatch = useDispatch();
   return (
     <>
-      {amount < 0 ? (
+      {total < 0 ? (
         <div className="shopping-cart-empty">
           <h2>Your cart is empty</h2>
           <Link to="/products" className="shopping-cart-empty-button">
@@ -39,7 +40,7 @@ export const ShoppingCart = () => {
                     </div>
                     <div className="shopping-cart-container-item-left-bottom">
                       <Dash className="shopping-cart-container-item-left-bottom-icon" />
-                      <p>{amount}</p>
+                      <p>{total}</p>
                       <Plus className="shopping-cart-container-item-left-bottom-icon" />
                     </div>
                   </div>
