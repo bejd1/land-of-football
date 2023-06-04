@@ -128,9 +128,6 @@ export const ProductsList = () => {
                       <p>{name}</p>
                       <p>${price}</p>
                     </div>
-                    <button className="products-list-cart-container-btn">
-                      Add to cart
-                    </button>
                   </div>
                 </Link>
               </div>

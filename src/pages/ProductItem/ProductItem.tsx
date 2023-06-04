@@ -3,6 +3,8 @@ import "./ProductItem.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Loading } from "../../components/Loading/Loading";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../components/Features/Cart/CartSlice";
 
 interface Product {
   id: number;
@@ -15,6 +17,7 @@ interface Product {
 export const ProductItem = () => {
   const [items, setItems] = useState<Product[]>([]);
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     try {
@@ -45,7 +48,20 @@ export const ProductItem = () => {
       <div className="product-item-container-left">
         <h3>{item.name}</h3>
         <p>Price: ${item.price}</p>
-        <button>Add to cart</button>
+        <button
+          onClick={() =>
+            dispatch(
+              addToCart({
+                id: item.id,
+                price: item.price,
+                url: item.url,
+                name: item.name,
+              })
+            )
+          }
+        >
+          Add to cart
+        </button>
       </div>
       <div className="product-item-container-right">
         <img src={item.url} alt={item.name} />

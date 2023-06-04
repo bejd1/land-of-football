@@ -1,92 +1,98 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../../App/Store";
-import axios from "axios";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface Product {
-  id: string;
-  title: string;
-  category: string;
-  url: string;
+type CartItem = {
+  id: number;
   price: number;
-}
+  quantity: number;
+  name: string;
+  url: string;
+};
 
-export interface CartState {
-  cartItems: Product[];
+type CartState = {
+  cartItems: CartItem[];
   amount: number;
   total: number;
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
-}
+};
 
-const initialState: CartState = {
+export const initialState: CartState = {
   cartItems: [],
   amount: 0,
   total: 0,
-  status: "idle",
-  error: null,
 };
-
-export const fetchProductsList = createAsyncThunk(
-  "cart/fetchProductsList",
-  async () => {
-    const response = await axios.get(
-      "https://land-of-football-9167d-default-rtdb.firebaseio.com/productsList.json"
-    );
-    return response.data;
-  }
-);
-
-console.log(fetchProductsList());
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.amount += 1;
-    },
-    decrement: (state) => {
-      state.amount -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.amount += action.payload;
-    },
-    clearCart(state) {
-      state.cartItems = [];
-      state.amount = 0;
-      state.total = 0;
-    },
-    removeFromCart(state, action: PayloadAction<string>) {
-      const itemId = action.payload;
-      const existingItem = state.cartItems.find((item) => item.id === itemId);
+    addToCart: (
+      state,
+      action: PayloadAction<{
+        id: number;
+        price: number;
+        url: string;
+        name: string;
+      }>
+    ) => {
+      const { id, price, url, name } = action.payload;
+      const cartItem: CartItem | undefined = state.cartItems.find(
+        (item) => item.id === id
+      );
 
-      if (existingItem) {
-        state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
-        // state.quanti ty -= existingItem.quantity;
-        // state.total -= existingItem.quantity * existingItem.price;
+      if (cartItem) {
+        cartItem.quantity++;
+      } else {
+        state.cartItems.push({ id, price, quantity: 1, url, name });
+      }
+
+      state.amount += price;
+    },
+    removeFromCart: (
+      state,
+      action: PayloadAction<{ id: number; price: number; quantity?: number }>
+    ) => {
+      const { id, quantity = 1 } = action.payload;
+      const cartItemIndex = state.cartItems.findIndex((item) => item.id === id);
+
+      if (cartItemIndex !== -1) {
+        const cartItemQuantity = state.cartItems[cartItemIndex].quantity;
+
+        if (cartItemQuantity > quantity) {
+          state.cartItems[cartItemIndex].quantity -= quantity;
+        } else {
+          state.cartItems.splice(cartItemIndex, 1);
+        }
+
+        // state.total -= price * quantity;
+      }
+    },
+    clearCart: (state) => {
+      state.cartItems = [];
+    },
+    increase: (state, action: PayloadAction<{ id: number }>) => {
+      const { id } = action.payload;
+      const cartItem = state.cartItems.find((item) => item.id === id);
+
+      if (cartItem) {
+        cartItem.quantity += 1;
+        state.amount += 1;
+      }
+    },
+
+    decrease: (state, action: PayloadAction<{ id: number }>) => {
+      const { id } = action.payload;
+      const cartItem = state.cartItems.find((item) => item.id === id);
+
+      if (cartItem) {
+        if (cartItem.quantity > 1) {
+          cartItem.quantity -= 1;
+          state.amount -= 1;
+        }
       }
     },
   },
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(fetchProductsList.pending, (state) => {
-  //       state.status = "loading";
-  //     })
-  //     .addCase(fetchProductsList.fulfilled, (state, action) => {
-  //       state.status = "succeeded";
-  //       state.cartItems = action.payload;
-  //     })
-  //     .addCase(fetchProductsList.rejected, (state, action) => {
-  //       state.status = "failed";
-  //       state.error = action.error.message ?? "Something went wrong";
-  //     });
-  // },
 });
 
-export const { increment, decrement, incrementByAmount } = cartSlice.actions;
-
-export const selectCartItems = (state: RootState) => state.cart.cartItems;
-export const selectCount = (state: RootState) => state.cart.amount;
-
+const { addToCart, removeFromCart, increase, decrease, clearCart } =
+  cartSlice.actions;
 export default cartSlice.reducer;
+export { addToCart, removeFromCart, increase, decrease, clearCart };

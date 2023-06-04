@@ -142,15 +142,6 @@ select::-ms-expand {
   margin: 15px 9px;
 }
 
-.products-list-cart-container-btn {
-  padding: 10px 22px;
-  border: none;
-  border-radius: 12px;
-  background-color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
 label {
   padding-right: 2px;
   font-size: 16px;
