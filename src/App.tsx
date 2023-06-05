@@ -31,7 +31,7 @@ function App(): JSX.Element {
               <div className="not__exit">
                 <h1 className="not__exits">This page does not exist</h1>
                 <Link to="/" className="not__exit-btn">
-                  BACK TO HOME
+                  back to home
                 </Link>
               </div>
             }

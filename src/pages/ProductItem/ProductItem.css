@@ -31,6 +31,9 @@
   cursor: pointer;
   margin: 20px 0;
 }
+.product-item-container-left button:hover {
+  background-color: #fd813fd5;
+}
 
 .product-item-container-left h3 {
   font-size: 34px;
@@ -80,7 +83,11 @@
 
 @media only screen and (max-width: 576px) {
   .product-item-container-right img {
-    width: 280px;
-    height: 280px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .product-item-container-left {
+    margin: 40px 0;
   }
 }

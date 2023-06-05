@@ -11,9 +11,11 @@ import {
 } from "../../components/Features/Cart/CartSlice";
 
 interface Items {
+  id: number;
   cartItems: [];
   amount: number;
   total: number;
+  quantity: number;
 }
 
 interface CartItem {
@@ -21,14 +23,12 @@ interface CartItem {
   name: string;
   price: number;
   url: string;
+  quantity: number;
 }
 export const ShoppingCart = () => {
   const { cartItems } = useSelector((state: RootState) => state.cart);
   const { total } = useSelector((store: { cart: Items }) => store.cart);
-  const { amount } = useSelector((store: { cart: Items }) => store.cart);
   const dispatch = useDispatch();
-
-  console.log(cartItems);
 
   return (
     <>
@@ -45,7 +45,8 @@ export const ShoppingCart = () => {
             <div className="shopping-cart-container-left">
               <h2>Cart</h2>
               {cartItems.map((item: CartItem) => {
-                const { url, name, price, id } = item;
+                const { url, name, price, id, quantity } = item;
+                const newPrice = price * quantity;
                 return (
                   <div key={id} className="shopping-cart-container-item">
                     <div className="shopping-cart-container-item-left">
@@ -57,23 +58,23 @@ export const ShoppingCart = () => {
                       <div className="shopping-cart-container-item-left-tools">
                         <div className="shopping-cart-container-item-left-top">
                           <p>{name}</p>
-                          <p>${price.toFixed(2)}</p>
+                          <p>${price}</p>
                         </div>
                         <div className="shopping-cart-container-item-left-bottom">
                           <Dash
-                            onClick={() => dispatch(decrease)}
+                            onClick={() => dispatch(decrease({ id: item.id }))}
                             className="shopping-cart-container-item-left-bottom-icon"
                           />
-                          <p>{total}</p>
+                          {item.quantity}
                           <Plus
-                            onClick={() => dispatch(increase)}
+                            onClick={() => dispatch(increase({ id: item.id }))}
                             className="shopping-cart-container-item-left-bottom-icon"
                           />
                         </div>
                       </div>
                     </div>
                     <div className="shopping-cart-container-item-right">
-                      <p>Total: ${amount.toFixed(2)}</p>
+                      <p>Total: ${newPrice.toFixed(2)}</p>
                       <Trash
                         onClick={() =>
                           dispatch(
@@ -95,8 +96,8 @@ export const ShoppingCart = () => {
             <div className="shopping-cart-container-right">
               <h2>Grandtotal</h2>
               <div className="shopping-cart-container-right-text">
-                <p>Grand total: ${amount.toFixed(2)}</p>
-                <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+                <p>Grand total: ${total.toFixed(2)}</p>
+                <Link to="/products" onClick={() => window.scrollTo(0, 0)}>
                   <button>Back to shop</button>
                 </Link>
               </div>

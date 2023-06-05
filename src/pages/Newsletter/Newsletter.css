@@ -51,6 +51,10 @@
   margin-left: 15px;
 }
 
+.newsletter-btn:hover {
+  background-color: #fd813fd5;
+}
+
 @media only screen and (max-width: 992px) {
   .newsletter-container {
     flex-direction: column;

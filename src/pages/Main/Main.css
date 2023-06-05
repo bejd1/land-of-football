@@ -39,6 +39,10 @@
   margin: 20px 0;
 }
 
+.main-btn:hover {
+  background-color: #fd813fd5;
+}
+
 .main-right-image {
   width: 300px;
   background-repeat: no-repeat;
@@ -76,5 +80,8 @@
 @media only screen and (max-width: 301px) {
   .main-left-box {
     margin: 10px;
+  }
+  .main-right-image {
+    width: 240px;
   }
 }

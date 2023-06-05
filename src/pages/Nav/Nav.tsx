@@ -9,8 +9,8 @@ interface BurgerMenuProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
-  const total = useSelector(
-    (state: { cart: { total: number } }) => state.cart.total
+  const amount = useSelector(
+    (state: { cart: { amount: number } }) => state.cart.amount
   );
 
   return (
@@ -32,7 +32,7 @@ export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
       <div className="nav-right">
         <Link to="/cart">
           <Cart3 className="nav-right-icon" />
-          <div className="nav-right-count">{total}</div>
+          <div className="nav-right-count">{amount}</div>
         </Link>
       </div>
     </div>

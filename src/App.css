@@ -24,6 +24,7 @@
 
 .not__exit-btn {
   background-color: #fd823f;
+  text-transform: capitalize;
   color: white;
   padding: 13px 25px;
   font-size: 15px;
@@ -33,6 +34,9 @@
   cursor: pointer;
   margin: 20px 0;
   text-decoration: none;
+}
+.not__exit-btn:hover {
+  background-color: #fd813fd5;
 }
 
 @media only screen and (max-width: 992px) {
