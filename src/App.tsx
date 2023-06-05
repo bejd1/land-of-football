@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import "./App.css";
 import { Home } from "./pages/Home/Home";
 import { Menu } from "./components/Menu/Menu";
@@ -11,13 +11,19 @@ import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart";
 import { ProductItem } from "./pages/ProductItem/ProductItem";
 
 function App(): JSX.Element {
+  const unlockScroll = useCallback(() => {
+    document.body.style.overflow = "";
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
-  const menuToggle = () => setIsOpen(!isOpen);
+  const menuToggle = () => {
+    unlockScroll();
+    setIsOpen(!isOpen);
+  };
 
   return (
     <div className="App">
       <BrowserRouter>
-        {isOpen && <Menu />}
+        {isOpen && <Menu menuToggle={menuToggle} />}
         <Nav menuToggle={menuToggle} />
         <Routes>
           <Route path="/" element={<Home />} />

@@ -77,7 +77,7 @@ export const ProductsList = () => {
           </button>
         </div>
         <div className="products-list-btns-left-form">
-          <form action="">
+          <form>
             <label htmlFor="category">Categories: </label>
             <select
               id="category"
@@ -93,7 +93,7 @@ export const ProductsList = () => {
           </form>
         </div>
         <div className="products-list-btns-right">
-          <form action="">
+          <form>
             <label htmlFor="sortby">Sort by: </label>
             <select id="sortby" name="sortby" onChange={handleSort}>
               <option value="all">-</option>
