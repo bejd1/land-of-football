@@ -1,7 +1,9 @@
-import React from "react";
 import "./Newsletter.css";
 
 export const Newsletter = () => {
+  const submitForm = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
   return (
     <div className="newsletter-container">
       <div className="newsletter-container-left">
@@ -10,10 +12,10 @@ export const Newsletter = () => {
           Subscribe our newsletter and get information about latest news about
           products and get 20% discount.
         </p>
-        <div className="newsletter-container-left-input">
+        <form className="newsletter-container-left-input" onSubmit={submitForm}>
           <input type="email" placeholder="Your email" />
           <button className="newsletter-btn">Subscribe</button>
-        </div>
+        </form>
       </div>
       <div className="newsletter-container-right">
         <img
