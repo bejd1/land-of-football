@@ -35,7 +35,7 @@ function App(): JSX.Element {
             path="*"
             element={
               <div className="not__exit">
-                <h1 className="not__exits">This page does not exist</h1>
+                <h2 className="not__exits">This page does not exist</h2>
                 <Link to="/" className="not__exit-btn">
                   back to home
                 </Link>

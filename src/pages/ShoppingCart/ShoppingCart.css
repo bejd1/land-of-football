@@ -46,6 +46,7 @@
   align-items: center;
   gap: 2px;
   border-radius: 12px;
+  max-width: 50px;
 }
 
 .shopping-cart-container-item-left-bottom-icon {

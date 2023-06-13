@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./ProductItem.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Loading } from "../../components/Loading/Loading";
 import { useDispatch } from "react-redux";
@@ -16,6 +16,7 @@ interface Product {
 
 export const ProductItem = () => {
   const [items, setItems] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true); // New state variable
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -26,19 +27,32 @@ export const ProductItem = () => {
           "https://land-of-football-9167d-default-rtdb.firebaseio.com/productsList.json"
         );
         setItems(result.data);
+        setIsLoading(false); // Update isLoading state when data is fetched
       };
       fetchData();
     } catch (error) {
       console.log("error");
+      setIsLoading(false); // Set isLoading to false on error as well
     }
   }, []);
 
   const item = items.find((item) => item.id === Number(id));
 
-  if (!item) {
+  if (isLoading) {
     return (
       <div className="vh">
         <Loading />
+      </div>
+    );
+  }
+
+  if (!item) {
+    return (
+      <div className="vh">
+        <h2>Page doesn't exist</h2>
+        <Link to="/" className="not__exit-btn">
+          back to home
+        </Link>
       </div>
     );
   }

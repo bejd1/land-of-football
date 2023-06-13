@@ -1,3 +1,26 @@
+.vh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+  font-family: "Oxanium", cursive;
+}
+
+.not__exit-btn {
+  background-color: #fd823f;
+  text-transform: capitalize;
+  color: white;
+  padding: 13px 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
 .products-list-item-loading {
   height: 55vh;
   display: flex;
