@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/land-of-football/static/css/main.d46010fb.css",
-    "main.js": "/land-of-football/static/js/main.5a8f7b63.js",
+    "main.js": "/land-of-football/static/js/main.e03016d8.js",
     "static/media/european-championship-ga61856e83_640.jpg": "/land-of-football/static/media/european-championship-ga61856e83_640.13e9cd97dccf19dc3dbd.jpg",
     "static/media/trophy-g4a98565b1_640.jpg": "/land-of-football/static/media/trophy-g4a98565b1_640.6cadd028ad8ef87567b4.jpg",
     "static/media/world-cup-g841f08756_640.jpg": "/land-of-football/static/media/world-cup-g841f08756_640.3cbb385e69524007264b.jpg",
     "index.html": "/land-of-football/index.html",
     "main.d46010fb.css.map": "/land-of-football/static/css/main.d46010fb.css.map",
-    "main.5a8f7b63.js.map": "/land-of-football/static/js/main.5a8f7b63.js.map"
+    "main.e03016d8.js.map": "/land-of-football/static/js/main.e03016d8.js.map"
   },
   "entrypoints": [
     "static/css/main.d46010fb.css",
-    "static/js/main.5a8f7b63.js"
+    "static/js/main.e03016d8.js"
   ]
 }
