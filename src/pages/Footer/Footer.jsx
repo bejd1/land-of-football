@@ -7,7 +7,7 @@ export const Footer = () => {
         &copy; {new Date().getFullYear()}{" "}
         <span>
           Copyright:{" "}
-          <a href="https://www.linkedin.com/in/bejdi7-undefined-a6393b273/">
+          <a href="https://www.linkedin.com/in/filip-bajdan-a6393b273/">
             Bejdi
           </a>
         </span>
