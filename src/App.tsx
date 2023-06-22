@@ -5,7 +5,6 @@ import { Menu } from "./components/Menu/Menu";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { Nav } from "./pages/Nav/Nav";
 import { Footer } from "./pages/Footer/Footer";
-import { Main } from "./pages/Main/Main";
 import { ProductsList } from "./pages/ProductsList/ProductsList";
 import { ShoppingCart } from "./pages/ShoppingCart/ShoppingCart";
 import { ProductItem } from "./pages/ProductItem/ProductItem";
