@@ -50,7 +50,7 @@ export const ProductItem = () => {
     return (
       <div className="vh">
         <h2>Page doesn't exist</h2>
-        <Link to="/" className="not__exit-btn">
+        <Link to="/land-of-football" className="not__exit-btn">
           back to home
         </Link>
       </div>

@@ -16,7 +16,7 @@ export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
   return (
     <div className="nav-container">
       <div className="nav-left">
-        <Link to="/" className="nav-left-home-link">
+        <Link to="/land-of-football" className="nav-left-home-link">
           <p>Home</p>
         </Link>
 
@@ -26,7 +26,7 @@ export const Nav: React.FC<BurgerMenuProps> = ({ menuToggle }) => {
         <BurgerMenu menuToggle={menuToggle} />
       </div>
 
-      <Link to="/" className="nav-center">
+      <Link to="/land-of-football" className="nav-center">
         <h4>Land Of Football</h4>
       </Link>
       <div className="nav-right">

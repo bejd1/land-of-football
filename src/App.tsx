@@ -26,8 +26,7 @@ function App(): JSX.Element {
         {isOpen && <Menu menuToggle={menuToggle} />}
         <Nav menuToggle={menuToggle} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/main" element={<Main />} />
+          <Route path="/land-of-football" element={<Home />} />
           <Route path="/products" element={<ProductsList />} />
           <Route path="/products/:id" element={<ProductItem />} />
           <Route path="/cart" element={<ShoppingCart />} />
@@ -36,7 +35,7 @@ function App(): JSX.Element {
             element={
               <div className="not__exit">
                 <h2 className="not__exits">This page does not exist</h2>
-                <Link to="/" className="not__exit-btn">
+                <Link to="/land-of-football" className="not__exit-btn">
                   back to home
                 </Link>
               </div>
